@@ -42,8 +42,7 @@ def playNextSong(ctx):
         return
     else:
         player = FFmpegPCMAudio(Playlist[0].url_https)
-        for i in miku.voice_clients:
-            i.play(player, after = lambda e : playNextSong(ctx))
+        ctx.voice_client.play(player, after = lambda e : playNextSong(ctx))
 
 def pafyObject(song):
     url = search(song)
@@ -117,11 +116,9 @@ async def play(ctx, *, song):
             return
     
     #Create an audio player using pafy object and play audio
-    player = discord.FFmpegPCMAudio(Playlist[0].url_https)
-    print(1)
+    player = discord.FFmpegOpusAudio(Playlist[0].url_https)
     await ctx.send('Now playing ' + Playlist[0].title)
-    for i in miku.voice_clients:
-        i.play(player, after = lambda e : playNextSong(ctx))
+    ctx.voice_client.play(player, after = lambda e : playNextSong(ctx))
         #i.source = discord.PCMVolumeTransformer(i.source, volume=0.2)
 
 @miku.command()
