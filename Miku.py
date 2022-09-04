@@ -172,9 +172,7 @@ async def loop(ctx):
         await ctx.send('Miku is not playing anything!')
         return
     global isLooping
-    print(isLooping)
     global shuffle
-    print(shuffle)
     if not ctx.voice_client.is_playing():
         await ctx.send('Miku isn\'t playing anything')
     elif isLooping:
@@ -182,6 +180,7 @@ async def loop(ctx):
     else:
         isLooping = True
         shuffle = False
+        await ctx.send('Miku is now looping the song ' + Playlist[0].title) 
 
 @miku.command()
 async def shuffle(ctx):
@@ -189,9 +188,7 @@ async def shuffle(ctx):
         await ctx.send('Miku is not playing anything!')
         return
     global shuffle
-    print(shuffle)
     global isLooping
-    print(isLooping)
 
     if not ctx.voice_client.is_playing():
         await ctx.send('Miku isn\'t playing anything')
