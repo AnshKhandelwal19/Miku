@@ -219,8 +219,9 @@ async def on_message(message):
 
     elif msg == 'miku clear playlist':
         clearPlaylist()
-
-    await miku.process_commands(message)
+        
+    else:
+        await miku.process_commands(message)
 
 @miku.event
 async def on_command_error(ctx, error): 
