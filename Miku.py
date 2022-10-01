@@ -119,7 +119,6 @@ async def play(ctx, *, song):
     player = discord.FFmpegOpusAudio(Playlist[0].url_https)
     await ctx.send('Now playing ' + Playlist[0].title)
     ctx.voice_client.play(player, after = lambda e : playNextSong(ctx))
-        #i.source = discord.PCMVolumeTransformer(i.source, volume=0.2)
 
 @miku.command()
 async def pause(ctx):
@@ -219,7 +218,6 @@ async def on_message(message):
 
     elif msg == 'miku clear playlist':
         clearPlaylist()
-        
     else:
         await miku.process_commands(message)
 
