@@ -1,6 +1,5 @@
 #Imports
 from discord.ext import commands
-from discord import FFmpegPCMAudio
 import discord, pafy, urllib.request, re, random
 
 miku = commands.Bot(command_prefix='miku ', intents=discord.Intents.all()) #Creates a bot called 'Miku'
