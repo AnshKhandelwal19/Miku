@@ -22,7 +22,7 @@ Once you are certain your virtual environment is up and running and you are usin
 
 Use the command: `pip install -r requirements.txt`
 
-###Adding AuthCode
+### Adding AuthCode
 
 Create an "authcode.txt" file in project directory and add your discord bot authentication code to the text file.
 
