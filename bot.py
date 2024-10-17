@@ -175,6 +175,7 @@ async def skip(ctx):
         await ctx.send('There are no more songs to play!')
     else:
         playNextSong(ctx)
+        
 
 @miku.command()
 async def loop(ctx):
